@@ -9,8 +9,8 @@ app.use(helmet());
 app.use(morgan("dev"));
 app.use(express.json());
 // Health check route
-app.get("/api/health", (req, res) => {
-  res.status(200).json({ status: "OK" });
+app.get("/", (req, res) => {
+  res.status(200).json({ check: "health", status: "OK" });
 });
 // Error handling middleware
 app.use((err, req, res, next) => {
